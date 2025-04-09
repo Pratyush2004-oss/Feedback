@@ -1,6 +1,6 @@
-import { User, Mail } from "lucide-react";
-import React, { useState } from "react";
 import axios from "axios";
+import { Mail, User } from "lucide-react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { BASE_API_URL } from "../constant/api";
 const InputForm = () => {
