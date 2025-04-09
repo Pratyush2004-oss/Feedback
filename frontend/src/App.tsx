@@ -2,9 +2,10 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import InputForm from "../components/InputForm";
 import Header from "../components/Header";
 import LoginForm from "../components/LoginForm";
-import { useAdminStore } from "../store/aminStore";
+import { useAdminStore } from "../store/adminStore";
 import { useEffect } from "react";
 import FeedbackPage from "../components/FeedbackPage";
+import Footer from "../components/Footer"
 const App = () => {
   const { checkAdmin, admin } = useAdminStore();
 
@@ -26,6 +27,7 @@ const App = () => {
           element={admin ? <Navigate to={"/feedback"} /> : <LoginForm />}
         />
       </Routes>
+      <Footer/>
     </>
   );
 };

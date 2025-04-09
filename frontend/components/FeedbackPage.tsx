@@ -2,7 +2,7 @@ import axios from "axios";
 import { DoorOpen, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BASE_API_URL } from "../constant/api";
-import { useAdminStore } from "../store/aminStore";
+import { useAdminStore } from "../store/adminStore";
 
 type FeedbackType = {
   _id: string;
@@ -32,7 +32,7 @@ const FeedbackPage = () => {
     admin && getAllFeedbacks();
   }, [admin]);
   return (
-    <div className="fkex h-[calc(100vh-64px)] ">
+    <div className="fkex h-[calc(100vh-117px)] ">
       <div className="h-[64px] flex items-center justify-between px-5 border-b">
         <h1 className="text-xl font-bold">{admin?.email}</h1>
         <button
@@ -43,13 +43,13 @@ const FeedbackPage = () => {
           Logout
         </button>
       </div>
-      <div className="h-[calc(100vh-128px)] overflow-auto p-5 relative">
+      <div className="h-[calc(100vh-180px)] overflow-auto p-5 relative">
         {loading && (
           <div className="h-full flex items-center justify-center">
             <span className="loading loading-bars loading-xl"></span>
           </div>
         )}
-        {feedbacks.length === 0 ? (
+        {!loading && feedbacks.length === 0 ? (
           <div className="h-full flex items-center justify-center">
             <p>No feedbacks yet</p>
           </div>
@@ -65,7 +65,7 @@ const FeedbackPage = () => {
                 </button>
               </div>
             )}
-            {showFeedbacks ? (
+            {!loading && showFeedbacks ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
                 {feedbacks.map((feedback) => (
                   <div
@@ -84,7 +84,7 @@ const FeedbackPage = () => {
                         </span>
                       </h1>
                     </div>
-                    <div className="mt-5 flex items-start gap-3 pb-7">
+                    <div className="mt-5 gap-3 pb-7">
                       <h1 className="font-bold underline">Feedback:</h1>
                       <p className="text-sm mt-1 text-justify font-medium">
                         {feedback.message}
@@ -100,7 +100,7 @@ const FeedbackPage = () => {
                   </div>
                 ))}
               </div>
-            ) : (
+            ) : !loading && (
               <div className=" flex items-center justify-center h-full flex-col gap-2">
                 <button
                   className="btn btn-primary btn-outline btn-sm "

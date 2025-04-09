@@ -1,6 +1,6 @@
 import { KeyRound, Mail } from "lucide-react";
 import { useState } from "react";
-import { useAdminStore } from "../store/aminStore";
+import { useAdminStore } from "../store/adminStore";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
@@ -18,7 +18,7 @@ const LoginForm = () => {
     }
   };
   return (
-    <div className="p-5 flex items-center justify-center h-[calc(100vh-64px)]">
+    <div className="p-5 flex items-center justify-center h-[calc(100vh-117px)]">
       <div className="flex flex-col items-center justify-center gap-2 border rounded-lg shadow-md w-full max-w-[550px] p-5">
         <h1 className="text-xl font-bold">Login</h1>
         <div className="divider" />

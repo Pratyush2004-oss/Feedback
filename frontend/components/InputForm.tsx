@@ -37,7 +37,7 @@ const InputForm = () => {
     }
   };
   return (
-    <div className="flex items-center justify-center h-[calc(100vh-64px)] p-4">
+    <div className="flex items-center justify-center h-[calc(100vh-117px)] p-4">
       <div className="flex flex-col items-center justify-center border p-5 border-gray-300 rounded-xl shadow-md max-w-[500px] w-full">
         <h1 className="font-mono font-bold text-2xl">Submit your Feedback</h1>
         <div className="divider" />
